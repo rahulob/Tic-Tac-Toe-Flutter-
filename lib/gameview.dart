@@ -10,7 +10,7 @@ class GameView extends StatefulWidget {
 class _GameViewState extends State<GameView> {
   bool playerX = true;
   bool isGameOver = false;
-  bool isButtonDisabled = false;
+  bool isButtonDisabled = true;
   List xno = ['#', '#', '#', '#', '#', '#', '#', '#', '#'];
 
   @override
@@ -76,7 +76,16 @@ class _GameViewState extends State<GameView> {
         (xno[1] != '#' && xno[1] == xno[4] && xno[1] == xno[7]) ||
         (xno[2] != '#' && xno[2] == xno[5] && xno[2] == xno[8]) ||
         (xno[0] != '#' && xno[0] == xno[4] && xno[0] == xno[8]) ||
-        (xno[2] != '#' && xno[2] == xno[4] && xno[2] == xno[6])) {
+        (xno[2] != '#' && xno[2] == xno[4] && xno[2] == xno[6]) ||
+        (xno[0] != '#' &&
+            xno[1] != '#' &&
+            xno[2] != '#' &&
+            xno[3] != '#' &&
+            xno[4] != '#' &&
+            xno[5] != '#' &&
+            xno[6] != '#' &&
+            xno[7] != '#' &&
+            xno[8] != '#')) {
       setState(() => isGameOver = true);
     }
   }
